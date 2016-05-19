@@ -7,13 +7,17 @@
 
     
 
-    <title></title>
+    <title>Generative Adversarial Networks | </title>
     <meta name="author" content="王泽贤">
+    
+    <meta name="description" content="Generative Adversarial Networks
+This repository contains the code and hyperparameters for the paper:
+“Generative Adversarial Networks.” Ian J. Goodfel">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="Generative Adversarial Networks"/>
     <meta property="og:site_name" content="水幕天华"/>
 
     
@@ -192,88 +196,35 @@
 </nav>
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+
         
 
-<div class="slider">
-    <ul class="slides">
-    
-       <li>
-           <a href="/">
-               <img class="slider-image" src="http://lorempixel.com/580/250/nature/1">
-               <div class="caption center-align">
-                 <h4>This is our big Tagline!</h3>
-                 <h5 class="light grey-text text-lighten-3">Here&#39;s our small slogan.</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="javascript:;">
-               <img class="slider-image" src="http://lorempixel.com/580/250/nature/2">
-               <div class="caption left-align">
-                 <h4>Left Aligned Caption</h3>
-                 <h5 class="light grey-text text-lighten-3">Here&#39;s our small slogan.</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="javascript:;">
-               <img class="slider-image" src="http://lorempixel.com/580/250/nature/3">
-               <div class="caption right-align">
-                 <h4>Right Aligned Caption</h3>
-                 <h5 class="light grey-text text-lighten-3">Here&#39;s our small slogan.</h5>
-               </div>
-           </a>
-       </li>
-    
-   </ul>
- </div>
+        
+    </div>
+</nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
 
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/05/06/mingyan/">30 本名著里浓缩成的 30 句名言</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-05-05T16:00:00.000Z"><a href="/2016/05/06/mingyan/">2016-05-06</a></time>
-
+            <div class="article-title">
                 
+    
+        <h1>Generative Adversarial Networks</h1>
+    
 
 
-                
             </div>
+            <time class="pink-link-context" datetime="2016-04-18T05:30:51.000Z"><a href="/2016/04/18/test/">2016-04-18</a></time>
 
             
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/04/18/test/">Generative Adversarial Networks</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-04-18T05:30:51.000Z"><a href="/2016/04/18/test/">2016-04-18</a></time>
-
-                
     <div class="tags-row">
         
             <a href="/tags/deep-learning/" class="chip pink lighten-1">deep learning</a>
@@ -281,139 +232,31 @@
     </div>
 
 
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#generative-adversarial-networks"><span class="section table-of-contents-text">Generative Adversarial Networks</span></a></li></ol>
+</div>
 
-                
+
+            <div class="entry pink-link-context">
+                <h1 id="generative-adversarial-networks">Generative Adversarial Networks</h1>
+<p>This repository contains the code and hyperparameters for the paper:</p>
+<p>“Generative Adversarial Networks.” Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio. ArXiv 2014.</p>
+<p>Please cite this paper if you use the code in this repository as part of a published research project.</p>
+<p>We are an academic lab, not a software company, and have no personnel devoted to documenting and maintaing this research code. Therefore this code is offered with absolutely no support. Exact reproduction of the numbers in the paper depends on exact reproduction of many factors, including the version of all software dependencies and the choice of underlying hardware (GPU model, etc). We used NVIDA Ge-Force GTX-580 graphics cards; other hardware will use different tree structures for summation and incur different rounding error. If you do not reproduce our setup exactly you should expect to need to re-tune your hyperparameters slight for your new setup.</p>
+<p>Moreover, we have not integrated any unit tests for this code into Theano or Pylearn2 so subsequent changes to those libraries may break the code in this repository. If you encounter problems with this code, you should make sure that you are using the development branch of Pylearn2 and Theano, and use “git checkout” to go to a commit from approximately June 9, 2014.</p>
+<p>This code itself requires no installation besides making sure that the “adversarial” directory is in a directory in your PYTHONPATH. If installed correctly, ‘python -c “import adversarial”’ will work. You must also install Pylearn2 and Pylearn2’s dependencies (Theano, numpy, etc.)</p>
+<p>parzen_ll.py is the script used to estimate the log likelihood of the model using the Parzen density technique.</p>
+<p>Call pylearn2/scripts/train.py on the various yaml files in this repository to train the model for each dataset reported in the paper. The names of *.yaml are fairly self-explanatory.</p>
+
             </div>
-
-            
         </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/04/18/一句话，让你不生气/">一句话，让你不生气</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-04-18T04:54:51.000Z"><a href="/2016/04/18/一句话，让你不生气/">2016-04-18</a></time>
-
-                
-
-
-                
-            </div>
-
-            
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/04/08/logistic-regression/">logistic regression</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-04-08T12:56:33.000Z"><a href="/2016/04/08/logistic-regression/">2016-04-08</a></time>
-
-                
-
-
-                
-            </div>
-
-            
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/04/08/hello-world/">Hello World</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-04-08T09:26:25.947Z"><a href="/2016/04/08/hello-world/">2016-04-08</a></time>
-
-                
-
-
-                
-            </div>
-
-            
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2015/11/15/weeklyreview/">Weekly Review Checklist</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2015-11-15T09:00:00.000Z"><a href="/2015/11/15/weeklyreview/">2015-11-15</a></time>
-
-                
-    <div class="tags-row">
-        
-            <a href="/tags/emacs/" class="chip pink lighten-1">emacs</a>
-        
-            <a href="/tags/orgmode/" class="chip pink lighten-1">orgmode</a>
-        
-            <a href="/tags/hexo/" class="chip pink lighten-1">hexo</a>
-        
     </div>
-
-
-
-                
-            </div>
-
-            
-        </div>
 </article>
 
-    
 
-    <ul class="pagination center-align">
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="active pink"><a href="/">1</a></li>
-    
-    
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
+
+
+
 
 </div>
 
