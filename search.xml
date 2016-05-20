@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[plot]]></title>
+      <url>http://yoursite.com/2016/05/19/plot/</url>
+      <content type="html"><![CDATA[<div id="chart">
+
+</div>
+<script type="text/javascript" src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/2016/05/19/plot/plot.jsx"></script>
+<img src="/2016/05/19/plot/ke.png" alt="银河" title="银河">
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/05/19/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;Hello World!&apos;);</span><br></pre></td></tr></table></figure>
+
+alert('Hello World!');
+
+<figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[30 本名著里浓缩成的 30 句名言]]></title>
+      <url>http://yoursite.com/2016/05/06/mingyan/</url>
+      <content type="html"><![CDATA[<ol style="list-style-type: decimal">
+<li>真正有气质的淑女，从不炫耀她所拥有的一切，她不告诉人她读过什么书，去过什么地方，有多少件衣服， 买过什么珠宝，因为她没有自卑感。 —《圆舞》</li>
+<li>最佳的报复不是仇恨，而是打心底发出的冷淡，干嘛花力气去恨一个不相干的人。 —《我的前半生》</li>
+<li>无论多豪华的婚礼都不代表幸福婚姻，两个人终生相处和睦与否和筵开几席，多少首饰全无关联。 —《小紫荆》</li>
+<li>无论做什么，记得为自己而做，那就毫无怨言。 —《流金岁月》</li>
+<li>两个人的适配是一种内心的感觉，而不是一种视觉，千万不要因满足视觉而忽视感觉。 —《花常好月常圆人长久》</li>
+<li>我的归宿就是健康与才干，一个人终究可以信赖的，不过是他自己，能够为他扬眉吐气的也是他自己， 我要什么归宿？我已找回我自己，我就是我的归宿。 —《胭脂》</li>
+<li>要生活的漂亮，需要付出极大的忍耐，一不抱怨，二不解释，绝对是个人才。 —《变形记》</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Generative Adversarial Networks]]></title>
+      <url>http://yoursite.com/2016/04/18/test/</url>
+      <content type="html"><![CDATA[<h1 id="generative-adversarial-networks">Generative Adversarial Networks</h1>
+<p>This repository contains the code and hyperparameters for the paper:</p>
+<p>“Generative Adversarial Networks.” Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio. ArXiv 2014.</p>
+<p>Please cite this paper if you use the code in this repository as part of a published research project.</p>
+<p>We are an academic lab, not a software company, and have no personnel devoted to documenting and maintaing this research code. Therefore this code is offered with absolutely no support. Exact reproduction of the numbers in the paper depends on exact reproduction of many factors, including the version of all software dependencies and the choice of underlying hardware (GPU model, etc). We used NVIDA Ge-Force GTX-580 graphics cards; other hardware will use different tree structures for summation and incur different rounding error. If you do not reproduce our setup exactly you should expect to need to re-tune your hyperparameters slight for your new setup.</p>
+<p>Moreover, we have not integrated any unit tests for this code into Theano or Pylearn2 so subsequent changes to those libraries may break the code in this repository. If you encounter problems with this code, you should make sure that you are using the development branch of Pylearn2 and Theano, and use “git checkout” to go to a commit from approximately June 9, 2014.</p>
+<p>This code itself requires no installation besides making sure that the “adversarial” directory is in a directory in your PYTHONPATH. If installed correctly, ‘python -c “import adversarial”’ will work. You must also install Pylearn2 and Pylearn2’s dependencies (Theano, numpy, etc.)</p>
+<p>parzen_ll.py is the script used to estimate the log likelihood of the model using the Parzen density technique.</p>
+<p>Call pylearn2/scripts/train.py on the various yaml files in this repository to train the model for each dataset reported in the paper. The names of *.yaml are fairly self-explanatory.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一句话，让你不生气]]></title>
+      <url>http://yoursite.com/2016/04/18/%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%8C%E8%AE%A9%E4%BD%A0%E4%B8%8D%E7%94%9F%E6%B0%94/</url>
+      <content type="html"><![CDATA[<ul>
+<li>有人问余光中：“李敖天天找你茬，你从不回应，这是为什么？” 余沉吟片刻答：“天天骂我，说明他生活不能没有我；而我不搭理，证明我的生活可以没有他。”</li>
+<li>有人问毕加索：“你的画怎么看不懂啊？”毕加索说：“听过鸟叫吗？”“听过。”“好听吗？”“好听。”“你听得懂吗？”</li>
+</ul>
+<p>有人问余光中：“李敖天天找你茬，你从不回应，这是为什么？” 余沉吟片刻答：“天天骂我，说明他生活不能没有我；而我不搭理，证明我的生活可以没有他。”</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[logistic regression]]></title>
+      <url>http://yoursite.com/2016/04/08/logistic-regression/</url>
+      <content type="html"><![CDATA[<h2 id="感知器学习算法pla">感知器学习算法（PLA）</h2>
+<p>Perceptron（感知器）这个词是机器学习中的一个重要概念，来源于神经科学， 是科学家们通过数学的方法来模拟神经元的工作方式而得到的一种简单的机器学习算法。</p>
+<h3 id="神经元模型">神经元模型</h3>
+<p>对于神经元的简单抽象如图所示,每个神经元是与其他神经元连结在一起的，一个神经元会受到多个其他神经元状态的冲击， 并且不同神经元传来的神经冲动对该神经元的影响不同，由一个加权因子w来控制，并由此决定自身激发状态。 在这个模型中神经元的激活值a表示为 <span class="math display">\[a = \left[\sum_{d=1}^{D}{w_dx_d}\right]+b\]</span> 这里的偏移量b也是有一定意义的：</p>
+<ul>
+<li>定义了神经元的激发临界值</li>
+<li>在空间上，它对决策边界(decision boundary) 有平移作用，就像常数作用在一次或二次函数上的效果</li>
+</ul>
+<span>$$\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}$$</span><!-- Has MathJax -->
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Weekly Review Checklist]]></title>
+      <url>http://yoursite.com/2015/11/15/weeklyreview/</url>
+      <content type="html"><![CDATA[
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> The Weekly Review</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&quot;If you&apos;re not doing the weekly review, you&apos;re not doing GTD!&quot;
+Ricky&apos;s RAM Dump: <a href="http://www.rickyspears.com/blog" target="_blank" rel="external">http://www.rickyspears.com/blog</a>
+</p>
+
+<p>
+&quot;It&apos;s called a weekly review, not a weakly review!&quot;
+</p>
+
+<p>
+&quot;Seven days without a review makes one weak!&quot;
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+Notes from David Allen&apos;s book &quot;Ready for Anything&quot;.
+</p>
+
+<p>
+The first challenge is to implement these models, and the second is to
+keep them active and functional. This guide provides the master key to
+achieving a consistently more relaxed and productive style of life and
+work. This process, whenever it&apos;s done, facilitates executive
+command-center thinking and confidence, and it&apos;s most effective when
+it&apos;s practiced every seven days.
+</p>
+
+<p>
+Charles&apos; action items have been added as checklist items
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Loose Papers <code>[0/5]</code></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Gather all scraps of paper, business cards, receipts, and
+miscellaneous paper. Put into your in-basket to process.
+</li>
+<li><code>[&#xA0;]</code> Empty out backpack. Put relevant items into intray.
+</li>
+<li><code>[&#xA0;]</code> Remove loose stuff from desk
+</li>
+<li><code>[&#xA0;]</code> Empty wallet of receipts and paper
+</li>
+<li><code>[&#xA0;]</code> Purge physical intray
+</li>
+<li><code>[&#xA0;]</code> Empty email inbox creating NAs as required
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Process Your Notes <code>[0/2]</code></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Review any journal/notes types of entries, meeting notes, and
+miscellaneous notes scribbled on notebook paper. Decide and enter
+action items, projects, waiting-fors, etc., as appropriate.
+</li>
+<li><code>[&#xA0;]</code> Review my Journal file  (C-c j)
+</li>
+<li><code>[&#xA0;]</code> Review my Office Journal file (linked from Journal File)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Empty Your Head <code>[0/1]</code></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Put in writing (in appropriate categories) any new projects, action
+items, waiting-fors, someday/maybes, etc., not yet captured.
+</li>
+<li><code>[&#xA0;]</code> Set a timer for 5 minutes and do brainstorming or mind-mapping
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Review Action Lists <code>[0/1]</code></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Mark off completed actions. Review for reminders of further action
+steps to record.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Review Waiting-For List <code>[0/1]</code></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Record appropriate actions for any needed follow-up. Check off
+received ones.
+</li>
+<li><code>[&#xA0;]</code> Review TODO items in Waiting State  C-c a T W &lt;tab&gt;
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Review Project (and Larger Outcome) Lists <code>[0/2]</code></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Evaluate status of projects, goals and outcomes, one by one,
+ensuring at least one current action item on each. Browse through
+work-in-progress support material to trigger new actions,
+completions, waiting-fors, etc.
+</li>
+<li><code>[&#xA0;]</code> Review Project List  (C-c a P)
+</li>
+<li><code>[&#xA0;]</code> Review contents of newgtd.org file   (C-c g)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Review Previous Calendar Data <code>[0/2]</code></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Review past calendar in detail for remaining action items, reference
+data, etc., and transfer into the active system.
+</li>
+<li><code>[&#xA0;]</code> Review Logged items for last week (C-c a a l left-arrow)
+</li>
+<li><code>[&#xA0;]</code> Read newgtd.org<sub>archive</sub> file
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Review Upcoming Calendar <code>[0/2]</code></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Review upcoming calendar events-long and short term. Capture actions
+triggered.
+</li>
+<li><code>[&#xA0;]</code> Review upcoming month (C-c a a M)
+</li>
+<li><code>[&#xA0;]</code> Review family calendar on refrigerator
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Review Any Relevant Checklists <code>[0/3]</code></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Use as a trigger for any new actions.
+</li>
+<li>Review Someday/Maybe List
+</li>
+<li>Review for any projects that may now have become active, and
+transfer to projects list. Delete items no longer of interest.
+</li>
+<li><code>[&#xA0;]</code> Review my <a href="someday.html">Someday/Maybe</a> list
+</li>
+<li><code>[&#xA0;]</code> Write a short summary of the week (C-c r a)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Be Creative and Courageous <code>[0/1]</code></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Any new, wonderful, harebrained, creative, thought-provoking,
+risk-taking ideas to add into your system???
+</li>
+<li><code>[&#xA0;]</code> Capture Todo items (C-c r t) or Someday (C-c r s)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Final Administration <code>[0/2]</code></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li><code>[&#xA0;]</code> Start Quicken and get my finances up to date
+</li>
+<li><code>[&#xA0;]</code> Backup GTD File
+</li>
+<li>england
+</li>
+<li>finances
+</li>
+<li><a href="http://www.emacswiki.org/cgi-bin/wiki.pl" target="_blank" rel="external">http://www.emacswiki.org/cgi-bin/wiki.pl</a>
+</li>
+<li>as far as I can tell
+</li>
+</ul>
+</div>
+</div>
+
+Last Updated 2016-05-19 &#x56DB; 13:02.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 24.5.2 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+]]></content>
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>http://yoursite.com/about/index.html</url>
+      <content type="html"><![CDATA[<p>大家好，我是XXX。欢迎来到我的个人技术博客。</p>
+<p>这里用markdown写下你的简介，就跟平时写md一样就可以了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书]]></title>
+      <url>http://yoursite.com/reading/index.html</url>
+      <content type="html"><![CDATA[
+]]></content>
+    </entry>
+    
+  
+</search>
