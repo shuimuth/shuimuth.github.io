@@ -392,18 +392,20 @@
                 <div class="article-title">
                     
     
-        <h1 class="indigo-link-context"><a href="/2016/05/22/2016:05:22:knn/">K Nearest Neighborhood</a></h1>
+        <h1 class="indigo-link-context"><a href="/2016/05/22/logistic-regression/">Logistic Regression</a></h1>
     
 
 
                 </div>
 
-                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/2016:05:22:knn/">2016-05-22</a></time>
+                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/logistic-regression/">2016-05-22</a></time>
 
                 
     <div class="tags-row">
         
             <a href="/tags/机器学习/" class="chip pink lighten-1">机器学习</a>
+        
+            <a href="/tags/神经网络/" class="chip pink lighten-1">神经网络</a>
         
     </div>
 
@@ -411,20 +413,16 @@
 
                 
                     <div class="entry pink-link-context">
-                        <h1 id="k-nearest-neighborhood">K Nearest Neighborhood</h1>
-<p>下面引用下维基百科对 KNN 的描述，具体点击<a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">这里</a> <blockquote><p>在模式识别领域中，最近邻居法（KNN 算法，又译 K-近邻算法）是一种用于分类和回归的非参数统计方法。在这两种情况下，输入包含特征空间中的 k 个最接近的训练样本。</p>
-<ul>
-<li>在 k-NN 分类中，输出是一个分类族群。一个对象的分类是由其邻居的“多数表决”确定的，k 个最近邻居（k 为正整数，通常 较小）中最常见的分类决定了赋予该对象的类别。若 k = 1，则该对象的类别直接由最近的一个节点赋予。</li>
-<li>在 k-NN 回归中，输出是该对象的属性值。该值是其 k 个最近邻居的值的平均值。</li>
-</ul>
-</blockquote>
+                        <h1 id="logistic-regression">Logistic Regression</h1>
+<p>logistic regression 和 perceptron 其实是比较像的，都是只能对线性可分的数据建模，也是基于神经科学的神经元模型得来的，神经元模型图如下。不过 logistic regression 的输出结果值具有一定的解释性，可以把它理解为概率。另外一方面，logistic regression 可以很容易地扩展到对多个类建模，而 percptron 只能作为二元分类器。 logistic regression 使用 sigmoid 激活函数</p>
+<p><span class="math display">\[\sigma = \frac{1}{1 + \exp^{-z}}\]</span>
                     </div>
                 
             </div>
 
             
             <div class="card-action pink-link-context">
-                <a href="2016/05/22/2016:05:22:knn/">READ MORE</a>
+                <a href="2016/05/22/logistic-regression/">READ MORE</a>
             </div>
             
         </div>
@@ -481,6 +479,92 @@
                 <div class="article-title">
                     
     
+        <h1 class="indigo-link-context"><a href="/2016/05/22/face/">人脸识别</a></h1>
+    
+
+
+                </div>
+
+                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/face/">2016-05-22</a></time>
+
+                
+    <div class="tags-row">
+        
+            <a href="/tags/计算机视觉/" class="chip pink lighten-1">计算机视觉</a>
+        
+            <a href="/tags/opencv/" class="chip pink lighten-1">opencv</a>
+        
+    </div>
+
+
+
+                
+                    <div class="entry pink-link-context">
+                        <p>最近无人机很火爆，使用无人机可以到处装逼，看着的确高大尚。不能放过这个装逼机会。 近期与同学做了一个基于四轴飞 行器的人脸追踪项目，简单来说就是通过安装在云台上的摄像机获取 图像，然后使用人脸检测与识别算法在图像中定位目标 人物所在位置，有了位置的反馈信息就能够 自动控制飞行器的飞行了。在这个项目中我主要负责的是人脸识别的部分，飞行 器控制部分则由另外 一个组员负责，我们分工很明确，各有所长，绝佳搭配啊。
+                    </div>
+                
+            </div>
+
+            
+            <div class="card-action pink-link-context">
+                <a href="2016/05/22/face/">READ MORE</a>
+            </div>
+            
+        </div>
+</article>
+
+    
+        <article class="simple-article">
+        <div class="card">
+            <div class="card-content">
+                <div class="article-title">
+                    
+    
+        <h1 class="indigo-link-context"><a href="/2016/05/22/2016:05:22:knn/">K Nearest Neighborhood</a></h1>
+    
+
+
+                </div>
+
+                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/2016:05:22:knn/">2016-05-22</a></time>
+
+                
+    <div class="tags-row">
+        
+            <a href="/tags/机器学习/" class="chip pink lighten-1">机器学习</a>
+        
+    </div>
+
+
+
+                
+                    <div class="entry pink-link-context">
+                        <h1 id="k-nearest-neighborhood">K Nearest Neighborhood</h1>
+<p>下面引用下维基百科对 KNN 的描述，具体点击<a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">这里</a> <blockquote><p>在模式识别领域中，最近邻居法（KNN 算法，又译 K-近邻算法）是一种用于分类和回归的非参数统计方法。在这两种情况下，输入包含特征空间中的 k 个最接近的训练样本。</p>
+<ul>
+<li>在 k-NN 分类中，输出是一个分类族群。一个对象的分类是由其邻居的“多数表决”确定的，k 个最近邻居（k 为正整数，通常 较小）中最常见的分类决定了赋予该对象的类别。若 k = 1，则该对象的类别直接由最近的一个节点赋予。</li>
+<li>在 k-NN 回归中，输出是该对象的属性值。该值是其 k 个最近邻居的值的平均值。</li>
+</ul>
+</blockquote>
+                    </div>
+                
+            </div>
+
+            
+            <div class="card-action pink-link-context">
+                <a href="2016/05/22/2016:05:22:knn/">READ MORE</a>
+            </div>
+            
+        </div>
+</article>
+
+    
+        <article class="simple-article">
+        <div class="card">
+            <div class="card-content">
+                <div class="article-title">
+                    
+    
         <h1 class="indigo-link-context"><a href="/2016/05/22/kmeans/">K means Clustering</a></h1>
     
 
@@ -511,49 +595,6 @@
             
             <div class="card-action pink-link-context">
                 <a href="2016/05/22/kmeans/">READ MORE</a>
-            </div>
-            
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/05/22/bp/">Back Propagation Neural Network</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/bp/">2016-05-22</a></time>
-
-                
-    <div class="tags-row">
-        
-            <a href="/tags/机器学习/" class="chip pink lighten-1">机器学习</a>
-        
-            <a href="/tags/神经网络/" class="chip pink lighten-1">神经网络</a>
-        
-    </div>
-
-
-
-                
-                    <div class="entry pink-link-context">
-                        <h1 id="back-propagation-neural-network">Back Propagation Neural Network</h1>
-<h2 id="模型架构">模型架构</h2>
-BP 神经网络是一种多层的前馈神经网络，其主要的特点是：信号是前向传播的，而误差是反向传播的。BP 神经网络的过程主要 分为两个阶段，第一阶段是信号的前向传播，从输入层经过隐含层，最后到达输出层；第二阶段是误差的反向传播，从输出层 到隐含层，最后到输入层，依次调节隐含层到输出层的权重和偏置，输入层到隐含层的权重和偏置。其架构如图所示
-                    </div>
-                
-            </div>
-
-            
-            <div class="card-action pink-link-context">
-                <a href="2016/05/22/bp/">READ MORE</a>
             </div>
             
         </div>
@@ -610,54 +651,13 @@ BP 神经网络是一种多层的前馈神经网络，其主要的特点是：�
                 <div class="article-title">
                     
     
-        <h1 class="indigo-link-context"><a href="/2016/05/22/face/">人脸识别</a></h1>
+        <h1 class="indigo-link-context"><a href="/2016/05/22/bp/">Back Propagation Neural Network</a></h1>
     
 
 
                 </div>
 
-                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/face/">2016-05-22</a></time>
-
-                
-    <div class="tags-row">
-        
-            <a href="/tags/计算机视觉/" class="chip pink lighten-1">计算机视觉</a>
-        
-            <a href="/tags/opencv/" class="chip pink lighten-1">opencv</a>
-        
-    </div>
-
-
-
-                
-                    <div class="entry pink-link-context">
-                        <p>最近无人机很火爆，使用无人机可以到处装逼，看着的确高大尚。不能放过这个装逼机会。 近期与同学做了一个基于四轴飞 行器的人脸追踪项目，简单来说就是通过安装在云台上的摄像机获取 图像，然后使用人脸检测与识别算法在图像中定位目标 人物所在位置，有了位置的反馈信息就能够 自动控制飞行器的飞行了。在这个项目中我主要负责的是人脸识别的部分，飞行 器控制部分则由另外 一个组员负责，我们分工很明确，各有所长，绝佳搭配啊。
-                    </div>
-                
-            </div>
-
-            
-            <div class="card-action pink-link-context">
-                <a href="2016/05/22/face/">READ MORE</a>
-            </div>
-            
-        </div>
-</article>
-
-    
-        <article class="simple-article">
-        <div class="card">
-            <div class="card-content">
-                <div class="article-title">
-                    
-    
-        <h1 class="indigo-link-context"><a href="/2016/05/22/logistic-regression/">Logistic Regression</a></h1>
-    
-
-
-                </div>
-
-                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/logistic-regression/">2016-05-22</a></time>
+                <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/bp/">2016-05-22</a></time>
 
                 
     <div class="tags-row">
@@ -672,16 +672,16 @@ BP 神经网络是一种多层的前馈神经网络，其主要的特点是：�
 
                 
                     <div class="entry pink-link-context">
-                        <h1 id="logistic-regression">Logistic Regression</h1>
-<p>logistic regression 和 perceptron 其实是比较像的，都是只能对线性可分的数据建模，也是基于神经科学的神经元模型得来的，神经元模型图如下。不过 logistic regression 的输出结果值具有一定的解释性，可以把它理解为概率。另外一方面，logistic regression 可以很容易地扩展到对多个类建模，而 percptron 只能作为二元分类器。 logistic regression 使用 sigmoid 激活函数</p>
-<p><span class="math display">\[\sigma = \frac{1}{1 + \exp^{-z}}\]</span>
+                        <h1 id="back-propagation-neural-network">Back Propagation Neural Network</h1>
+<h2 id="模型架构">模型架构</h2>
+BP 神经网络是一种多层的前馈神经网络，其主要的特点是：信号是前向传播的，而误差是反向传播的。BP 神经网络的过程主要 分为两个阶段，第一阶段是信号的前向传播，从输入层经过隐含层，最后到达输出层；第二阶段是误差的反向传播，从输出层 到隐含层，最后到输入层，依次调节隐含层到输出层的权重和偏置，输入层到隐含层的权重和偏置。其架构如图所示
                     </div>
                 
             </div>
 
             
             <div class="card-action pink-link-context">
-                <a href="2016/05/22/logistic-regression/">READ MORE</a>
+                <a href="2016/05/22/bp/">READ MORE</a>
             </div>
             
         </div>
