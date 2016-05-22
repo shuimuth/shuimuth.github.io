@@ -1,0 +1,684 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>感知器学习算法 | </title>
+    <meta name="author" content="王泽贤">
+    
+    <meta name="description" content="感知器学习算法（PLA）
+Perceptron（感知器）这个词是机器学习中的一个重要概念，来源于神经科学，是科学家们通过数学的方法来模拟神经元的工作方式而得到的一种简单的机器学习算法。
+神经元模型
+对于神经元的简单抽象如图所示,每个神经元是与其他神经元连结在一起的，一个神经元会受到多个其他神经元状态的冲击，并且不同神经元传来的神经冲动对该神经元的影响不同，由一个加权因子 w 来控制，并由此决定自身激发状态。">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="感知器学习算法"/>
+    <meta property="og:site_name" content="水幕天华"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="水幕天华" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">水幕天华</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://ww2.sinaimg.cn/small/74990035jw1f1rjkd681bj20rs0rsdhg.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">王泽贤</p>
+                        <p class="desc">Web前端/linux/人工智能</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/随笔/">
+                    随笔 <span class="right">2</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/随笔/心态/">
+                    心态 <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/随笔/名言/">
+                    名言 <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/orgmode/">
+                    orgmode <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/人工智能/">
+                    人工智能 <span class="right">9</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/人工智能/机器视觉/">
+                    机器视觉 <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/人工智能/机器学习/">
+                    机器学习 <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/数据可视化/">
+                    数据可视化 <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/数据可视化/数据降维/">
+                    数据降维 <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/人工智能/">人工智能</a><a class="breadcrumb" href="/categories/人工智能/机器学习/">机器学习</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>感知器学习算法</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-05-21T16:00:00.000Z"><a href="/2016/05/22/pla/">2016-05-22</a></time>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/机器学习/" class="chip pink lighten-1">机器学习</a>
+        
+            <a href="/tags/神经网络/" class="chip pink lighten-1">神经网络</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#感知器学习算法pla"><span class="section table-of-contents-text">感知器学习算法（PLA）</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#神经元模型"><span class="section table-of-contents-text">神经元模型</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#感知器算法"><span class="section table-of-contents-text">感知器算法</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#学习准则"><span class="section table-of-contents-text">学习准则</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#具体实现"><span class="section table-of-contents-text">具体实现</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h1 id="感知器学习算法pla">感知器学习算法（PLA）</h1>
+<p>Perceptron（感知器）这个词是机器学习中的一个重要概念，来源于神经科学，是科学家们通过数学的方法来模拟神经元的工作方式而得到的一种简单的机器学习算法。</p>
+<h2 id="神经元模型">神经元模型</h2>
+<p>对于神经元的简单抽象如图所示,每个神经元是与其他神经元连结在一起的，一个神经元会受到多个其他神经元状态的冲击，并且不同神经元传来的神经冲动对该神经元的影响不同，由一个加权因子 w 来控制，并由此决定自身激发状态。 <a id="more"></a></p>
+<div align="center">
+<img src="/2016/05/22/pla/neuron_model.jpeg" alt="神经元模型" title="神经元模型">
+</div>
+<p>在这个模型中神经元的激活值 a 表示为</p>
+<p><span class="math display">\[a = \left[\sum_{d=1}^{D}{w_dx_d}\right]+b\]</span></p>
+<p>这里的偏移量 b 也是有一定意义的：</p>
+<ul>
+<li>定义了神经元的激发临界值</li>
+<li>在空间上，它对决策边界(decision boundary) 有平移作用，就像常数作用在一次或二次函数上的效果</li>
+</ul>
+<h2 id="感知器算法">感知器算法</h2>
+<p>感知器使用特征向量来表示的前馈式人工神经网络，它是一种二元分类器，把矩阵上的输入 x（实数值向量）映射到输出值 f(x)上（一个二元的值）。</p>
+<p><span class="math display">\[
+y=
+\begin{cases}
+1, \quad \text{if} \,\,\, wx + b &gt; 0\\
+0, \quad \text{else}
+\end{cases}
+\]</span></p>
+<p>感知器算法是二维线性分类器(Binary Classifier)，但它与我们所知道的决策树算法和 KNN 都不太一样。主要区别在于：</p>
+<ul>
+<li>感知器算法是一种所谓“错误驱动(error-driven)”的算法。当我们训练这个算法时，只要输出值是正确的，这个算法就不会进行任何数据的调整。反之，当输出值与实际值异号，这个算法就会自动调整参数的比重。</li>
+<li>感知器算法是实时(online)的。它逐一处理每一条数据，而不是进行批处理。</li>
+</ul>
+<h3 id="学习准则">学习准则</h3>
+<p>对于感知器学习算法来说，学习准则是比较简单的。只有判别错误的时候才进行更新，更新公式为：</p>
+<p><span class="math display">\[ w \leftarrow w_d + yx_d \\
+b \leftarrow b + y \]</span></p>
+<h2 id="具体实现">具体实现</h2>
+<p>下面是感知器学习算法的具体实现。这个算法使用了两个测试数据，一个是老师提供的分类数据，一个是自动生成的多元高斯 分布的数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">__author__ = <span class="string">'wangzx'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_data</span><span class="params">(mean, cov)</span>:</span></span><br><span class="line">    x = []</span><br><span class="line">    y = []</span><br><span class="line">    <span class="keyword">for</span> i, m <span class="keyword">in</span> enumerate(mean):</span><br><span class="line">        x.extend(np.random.multivariate_normal(m, cov[i], (<span class="number">1000</span>,)))</span><br><span class="line">        y.extend([i] * <span class="number">1000</span>)</span><br><span class="line">    g_data = [(f, t) <span class="keyword">for</span> f, t <span class="keyword">in</span> zip(x, y)]</span><br><span class="line">    np.random.shuffle(g_data)</span><br><span class="line">    <span class="keyword">return</span> g_data</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_data</span><span class="params">(g_data, line=None)</span>:</span></span><br><span class="line">    x = [f <span class="keyword">for</span> f, t <span class="keyword">in</span> g_data]</span><br><span class="line">    x = np.asarray(x)</span><br><span class="line">    y = [t <span class="keyword">for</span> f, t <span class="keyword">in</span> g_data]</span><br><span class="line">    y = np.asarray(y)</span><br><span class="line">    plt.scatter(x[:,<span class="number">0</span>], x[:,<span class="number">1</span>], <span class="number">20</span>, y)</span><br><span class="line">    <span class="keyword">if</span> line <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        plt.plot(line[:,<span class="number">0</span>], line[:,<span class="number">1</span>], <span class="string">'g'</span>)</span><br><span class="line">    <span class="comment">#plt.plot([-8,6], [-4, 14], 'g')</span></span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    mean = [[<span class="number">-2</span>,<span class="number">7</span>], [<span class="number">1</span>,<span class="number">1</span>]]</span><br><span class="line">    cov1 = [[<span class="number">1</span>,<span class="number">0.5</span>], [<span class="number">0.5</span>, <span class="number">3</span>]]</span><br><span class="line">    cov2 = [[<span class="number">1</span>,<span class="number">0</span>], [<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">    g_data = generate_data(mean, [cov1, cov2])</span><br><span class="line">    plot_data(g_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>上面的脚本文件生成了包含两个类标的数据，每一类中的数据都是服从多元高斯分布的，数据 如下图所示。</p>
+<div align="center">
+<img src="/2016/05/22/pla/cl.png" alt="cl.png" title="">
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cPickle <span class="keyword">as</span> pkl</span><br><span class="line"><span class="keyword">from</span> generate_data <span class="keyword">import</span> generate_data, plot_data</span><br><span class="line">__author__ = <span class="string">'wangzx'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Perceptron</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">""" A Perceptron instance can take a function and attempt to</span><br><span class="line">    ``learn`` a bias and set of weights that compute that function,</span><br><span class="line">    using the perceptron learning algorithm."""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, inputs)</span>:</span></span><br><span class="line">        <span class="string">""" Initialize the perceptron with the bias and all weights</span><br><span class="line">        set to 0.0. ``inputs`` is the input to the</span><br><span class="line">        perceptron."""</span></span><br><span class="line">        num_inputs = inputs.shape[<span class="number">1</span>]</span><br><span class="line">        self.num_inputs = num_inputs</span><br><span class="line">        self.bias = <span class="number">0.0</span></span><br><span class="line">        self.weights = np.zeros(num_inputs)</span><br><span class="line">        self.inputs = inputs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">output</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="string">""" Return the output (0 or 1) from the perceptron, with input</span><br><span class="line">        ``x``."""</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> np.inner(self.weights, x)+self.bias &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">learn</span><span class="params">(self, y, eta=<span class="number">0.1</span>, max_epoch=<span class="number">100</span>)</span>:</span></span><br><span class="line">        <span class="comment"># initialize the bias and weights with random values</span></span><br><span class="line">        self.bias = np.random.normal()</span><br><span class="line">        self.weights = np.random.randn(self.num_inputs)</span><br><span class="line">        number_of_errors = <span class="number">-1</span></span><br><span class="line">        epoch = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> number_of_errors != <span class="number">0</span> <span class="keyword">and</span> epoch &lt; max_epoch:</span><br><span class="line">            number_of_errors = <span class="number">0</span></span><br><span class="line">            epoch += <span class="number">1</span></span><br><span class="line">            <span class="comment">#print("epoch %d" % epoch)</span></span><br><span class="line">            <span class="comment">#print("Beginning iteration")</span></span><br><span class="line">            <span class="keyword">for</span> i, x <span class="keyword">in</span> enumerate(self.inputs):</span><br><span class="line">                y_pre = self.output(x)</span><br><span class="line">                <span class="keyword">if</span> y[i] != y_pre:</span><br><span class="line">                    number_of_errors += <span class="number">1</span></span><br><span class="line">                    self.bias = self.bias + eta*y[i]</span><br><span class="line">                    self.weights = self.weights + eta*y[i]*x</span><br><span class="line">            <span class="comment">#print("Number of errors:", number_of_errors, "\n")</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X)</span>:</span></span><br><span class="line">        res = [self.output(x) <span class="keyword">for</span> x <span class="keyword">in</span> X]</span><br><span class="line">        <span class="keyword">return</span> np.asarray(res)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    feat = pkl.load(open(<span class="string">"data/train_X.pkl"</span>, <span class="string">'rb'</span>))</span><br><span class="line">    y = pkl.load(open(<span class="string">"data/train_Y.pkl"</span>, <span class="string">'rb'</span>))</span><br><span class="line">    y[y==<span class="number">0</span>] = <span class="number">-1</span></span><br><span class="line">    test_feat = pkl.load(open(<span class="string">"data/test_X.pkl"</span>, <span class="string">'rb'</span>))</span><br><span class="line">    test_y = pkl.load(open(<span class="string">"data/test_Y.pkl"</span>, <span class="string">'rb'</span>))</span><br><span class="line">    test_y[test_y==<span class="number">0</span>] = <span class="number">-1</span></span><br><span class="line">    pla = Perceptron(feat)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"Begin fit training data"</span>)</span><br><span class="line">    pla.learn(y, eta=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    y_prd = pla.predict(test_feat)</span><br><span class="line">    score = np.sum(y_prd == test_y) / y_prd.shape[<span class="number">0</span>]</span><br><span class="line">    print(<span class="string">"Test accuracy is %f"</span> % score)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_gdata</span><span class="params">()</span>:</span></span><br><span class="line">    mean = [[<span class="number">-2</span>,<span class="number">7</span>], [<span class="number">1</span>,<span class="number">1</span>]]</span><br><span class="line">    cov1 = [[<span class="number">1</span>,<span class="number">0.5</span>], [<span class="number">0.5</span>, <span class="number">3</span>]]</span><br><span class="line">    cov2 = [[<span class="number">1</span>,<span class="number">0</span>], [<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">    g_data = generate_data(mean, [cov1, cov2])</span><br><span class="line">    X = [f <span class="keyword">for</span> f, t <span class="keyword">in</span> g_data]</span><br><span class="line">    X = np.asarray(X)</span><br><span class="line">    y = [t <span class="keyword">for</span> f, t <span class="keyword">in</span> g_data]</span><br><span class="line">    y = np.asarray(y)</span><br><span class="line">    y[y==<span class="number">0</span>] = <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    pla = Perceptron(X)</span><br><span class="line">    print(<span class="string">"Begin fit training data"</span>)</span><br><span class="line">    pla.learn(y, eta=<span class="number">1</span>, max_epoch=<span class="number">300</span>)</span><br><span class="line"></span><br><span class="line">    y_prd = pla.predict(X)</span><br><span class="line">    score = np.sum(y_prd == y) / y_prd.shape[<span class="number">0</span>]</span><br><span class="line">    print(<span class="string">"Test accuracy is %f"</span> % score)</span><br><span class="line">    border_line(pla, g_data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">border_line</span><span class="params">(pla, g_data)</span>:</span></span><br><span class="line">    b = pla.bias</span><br><span class="line">    w = pla.weights</span><br><span class="line">    x = np.asarray([[<span class="number">-8</span>, <span class="number">6</span>]])</span><br><span class="line">    y = -(w[<span class="number">0</span>]*x + b) / w[<span class="number">1</span>]</span><br><span class="line">    plot_data(g_data, np.concatenate((x, y)).T)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#test()</span></span><br><span class="line">    <span class="comment">#test_gdata()</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>这是在自动生成的数据集中得到的结果，可以看到感知器算法能够比较理想地拟合线性可分的数据（这个数据集并非是线性可分的，有几个数据点交叉了，所以要设定 max_epoch，而不是让它迭代直至收敛）。</p>
+<div align="center">
+<img src="/2016/05/22/pla/clr.png" alt="clr.png" title="">
+</div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/05/22/pla/" data-title="感知器学习算法" data-url="http://shuimuth.github.io/2016/05/22/pla/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'shuimuth'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m3 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="https://github.com/shuimuth" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+            </div>
+            
+
+            
+            <div class="col m9 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=56341338" charset="UTF-8"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+</body>
+</html>

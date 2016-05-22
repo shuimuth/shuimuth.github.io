@@ -2,63 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/05/19/plot/</loc>
+    <loc>http://shuimuth.github.io/2016/05/22/kmeans/</loc>
+    
+    <lastmod>2016-05-22T16:25:01.093Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/23/tsne/</loc>
+    
+    <lastmod>2016-05-22T16:24:29.181Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/23/svm/</loc>
+    
+    <lastmod>2016-05-22T16:12:28.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/naive-bayes/</loc>
+    
+    <lastmod>2016-05-22T15:12:49.593Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/decision-tree/</loc>
+    
+    <lastmod>2016-05-22T15:12:23.361Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/pla/</loc>
+    
+    <lastmod>2016-05-22T15:12:06.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/logistic-regression/</loc>
+    
+    <lastmod>2016-05-22T15:11:40.605Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/bp/</loc>
+    
+    <lastmod>2016-05-22T15:10:59.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/2016:05:22:knn/</loc>
+    
+    <lastmod>2016-05-22T13:31:18.661Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/22/face/</loc>
+    
+    <lastmod>2016-05-22T12:59:57.850Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shuimuth.github.io/2016/05/19/plot/</loc>
     
     <lastmod>2016-05-19T12:35:04.574Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/05/19/hello-world/</loc>
+    <loc>http://shuimuth.github.io/2016/05/19/hello-world/</loc>
     
     <lastmod>2016-05-19T11:37:09.626Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/11/15/weeklyreview/</loc>
+    <loc>http://shuimuth.github.io/2015/11/15/weeklyreview/</loc>
     
     <lastmod>2016-05-19T05:02:09.658Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/04/08/logistic-regression/</loc>
-    
-    <lastmod>2016-05-19T04:42:42.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/05/06/mingyan/</loc>
+    <loc>http://shuimuth.github.io/2016/05/06/mingyan/</loc>
     
     <lastmod>2016-05-07T12:46:43.877Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/04/18/test/</loc>
+    <loc>http://shuimuth.github.io/2016/04/18/test/</loc>
     
     <lastmod>2016-04-18T07:13:39.603Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/04/18/%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%8C%E8%AE%A9%E4%BD%A0%E4%B8%8D%E7%94%9F%E6%B0%94/</loc>
+    <loc>http://shuimuth.github.io/2016/04/18/%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%8C%E8%AE%A9%E4%BD%A0%E4%B8%8D%E7%94%9F%E6%B0%94/</loc>
     
     <lastmod>2016-04-18T05:22:36.558Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>http://shuimuth.github.io/about/index.html</loc>
     
     <lastmod>2016-04-08T15:53:02.158Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/reading/index.html</loc>
+    <loc>http://shuimuth.github.io/reading/index.html</loc>
     
     <lastmod>2016-04-08T15:53:02.158Z</lastmod>
     
